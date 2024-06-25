@@ -1,12 +1,8 @@
 <% @games.each do |game| %>
 <div class="">
-    <p>Title: <%= game.title %></p>
+    <p><%=link_to game.title, game_path(game) %></p>
     <%= image_tag game.image %>
-    <p>Description: <%= game.description %></p>
-    <p>Genre: <%= game.genre.name %></p>
-    <p>Platform: <%= game.platform.name %></p>
-    <p>Publisher: <%= game.publisher.name %></p>
-    <p>Release Date<%= game.release_date %></p>
+    <p><small>Genre: </small><%= game.genre.name %></p>
 </div>
 <br>
 <%end%>
