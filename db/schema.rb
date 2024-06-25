@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_190415) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_195141) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "image"
@@ -22,6 +22,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_190415) do
     t.string "release_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genre_id", null: false
+    t.integer "platform_id", null: false
+    t.integer "publisher_id", null: false
+    t.index ["genre_id"], name: "index_games_on_genre_id"
+    t.index ["platform_id"], name: "index_games_on_platform_id"
+    t.index ["publisher_id"], name: "index_games_on_publisher_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -42,4 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_190415) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "games", "genres"
+  add_foreign_key "games", "platforms"
+  add_foreign_key "games", "publishers"
 end

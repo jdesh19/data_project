@@ -1,9 +1,24 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'net/http'
+require 'json'
+
+data_url = "https://www.freetogame.com/api/games"
+data_uri = URI(data_url)
+
+game_data_response = Net::HTTP.get(data_uri)
+
+games_json = JSON.parse(game_data_response)
+
+for game_data in games_json
+  genre = Genre.find_or_create_by(name: game_data["genre"])
+  platform = Platform.find_or_create_by(name: game_data["platform"])
+  publisher = Publisher.find_or_create_by(name: game_data["publisher"])
+
+  Game.create(title: game_data["title"],
+              image: game_data["thumbnail"],
+              description: game_data["short_description"],
+              genre: genre,
+              platform: platform,
+              publisher: publisher,
+              release_date: game_data["release_date"]
+             )
+end
