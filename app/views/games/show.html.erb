@@ -2,6 +2,6 @@
 <%= image_tag @game.image %>
 <p><small>Description:</small> <%= @game.description %></p>
 <p><small>Genre:</small> <%=link_to @game.genre.name, genre_path(@game.genre)%></p>
-<p><small>Publisher: </small><%= @game.publisher.name %></p>
-<p><small>Platform: </small><%= @game.platform.name %></p>
+<p><small>Publisher: </small><%=link_to @game.publisher.name, publisher_path(@game.publisher) %></p>
+<p><small>Platform: </small><%=link_to @game.platform.name, platform_path(@game.platform) %></p>
 <p><small>Release Date: </small><%= @game.release_date %></p>
