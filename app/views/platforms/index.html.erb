@@ -1,0 +1,5 @@
+<h1 class="text-3xl">All Game platforms</h1>
+<% @platforms.each do |platform| %>
+
+    <%= link_to platform.name, platform_path(platform), :class=>"mt-3" %>
+<%end%>

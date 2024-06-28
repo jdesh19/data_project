@@ -1,0 +1,11 @@
+<h1 class="text-3xl">All Game Publishers</h1>
+<table>
+    <th>Company name:</th>
+    <th>Games Published:</th>
+    <% @publishers.each do |publisher| %>
+    <tr>
+        <td><%= link_to publisher.name, publisher_path(publisher), :class=>"mt-3" %></td>
+        <td><%= publisher.games.count %></td>
+    </tr>
+    <%end%>
+</table>

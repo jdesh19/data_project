@@ -11,9 +11,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="bg-blue-300">
-      <%= render 'shared/navigation' %>
+  <body class="bg-blue-300">
+    <%= render 'shared/navigation' %>
+    <main class="grid justify-center">
       <%= yield %>
     </main>
   </body>
