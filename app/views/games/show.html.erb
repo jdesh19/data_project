@@ -1,5 +1,5 @@
 <p><%= @game.title %></p>
-<%= image_tag @game.image %>
+<%= image_tag @game.image, alt: @game.title %>
 <p><small>Description:</small> <%= @game.description %></p>
 <p><small>Genre:</small> <%=link_to @game.genre.name, genre_path(@game.genre)%></p>
 <p><small>Publisher: </small><%=link_to @game.publisher.name, publisher_path(@game.publisher) %></p>

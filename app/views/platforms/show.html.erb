@@ -1,6 +1,6 @@
 <h1 class="text-3xl mt-2 mb-2">Games on <%=@platform.name%></h1>
 <%@games.each do |game|%>
 <p><%=link_to game.title, game_path(game)%></p>
-<%= image_tag game.image%>
+<%= image_tag game.image, alt: game.title %>
 
 <%end%>
