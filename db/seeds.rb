@@ -20,6 +20,7 @@ for game_data in games_json
               genre: genre,
               platform: platform,
               publisher: publisher,
-              release_date: game_data["release_date"]
+              release_date: game_data["release_date"],
+              downloads: Faker::Number.number(digits: 5)
              )
 end

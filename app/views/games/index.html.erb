@@ -7,6 +7,7 @@
     <p><%=link_to game.title, game_path(game) %></p>
     <%=image_tag game.image, alt: game.title %>
     <p><%= game.genre.name %></p>
+    <p><%= game.downloads %></p>
 </div>
 <br>
 <%end%>
