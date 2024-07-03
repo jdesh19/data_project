@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_195141) do
     t.string "publisher"
     t.string "developer"
     t.string "release_date"
+    t.string "downloads"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "genre_id", null: false

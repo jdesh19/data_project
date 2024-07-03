@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'faker'
 
 data_url = "https://www.freetogame.com/api/games"
 data_uri = URI(data_url)
