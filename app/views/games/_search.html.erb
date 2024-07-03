@@ -1,6 +1,6 @@
 <%= search_form_for @q, url: games_path do |f| %>
 <div class="field">
-    <%= f.label :title_, "Search by Game Title" %>
+    <%= f.label :title_cont, "Search by Game Title" %>
     <%= f.search_field :title_cont %>
     <%= f.label :genre_id_eq, "Filter by Genre" %>
     <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, include_blank: true %>
