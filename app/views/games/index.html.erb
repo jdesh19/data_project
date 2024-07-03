@@ -10,5 +10,10 @@
 </div>
 <br>
 <%end%>
+
+<%if @games.count < 10 %>
+    <h6 class >Page 1 of 1</h6>
+<%else%>
 <%= paginate @games%>
+<%end%>
 
