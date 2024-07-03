@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_195141) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_03_032750) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "image"
@@ -20,12 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_195141) do
     t.string "publisher"
     t.string "developer"
     t.string "release_date"
-    t.string "downloads"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "genre_id", null: false
     t.integer "platform_id", null: false
     t.integer "publisher_id", null: false
+    t.integer "downloads"
     t.index ["genre_id"], name: "index_games_on_genre_id"
     t.index ["platform_id"], name: "index_games_on_platform_id"
     t.index ["publisher_id"], name: "index_games_on_publisher_id"
