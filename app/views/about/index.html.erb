@@ -1,0 +1,13 @@
+<h1 class="grid justify-center text-3xl mb-5">About This Website:</h1>
+<div class="flex justify-center">
+  <div class="w-2/3">
+    <p class="mb-5">
+      In this web application there is one major dataset used to create the database of free to play games. ( <%= link_to "https://www.freetogame.com/api/games", "https://www.freetogame.com/api/games" %> ). In this JSON API there are seven attributes out of eleven provided that are used to create a Games, a Genres, a Platforms and a Publishers table. 
+      <p>Their relations are as follows:</p>
+    </p>
+    <%= image_tag("erd.png", alt: "Games ERD", class: "flex justify-center") %>
+    <p class="mt-5">
+      Genres, Platforms and Publishers all holding a unique ID along with the name. The Games table hold the unique ID of its previously mentioned child tables. This data will be used to search Free to play computer games by title and/or genre. 
+    </p>
+  </div>
+</div>
