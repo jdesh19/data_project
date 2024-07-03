@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :genres
   resources :platforms
   resources :publishers
+  resources :about
   root "games#index"
+  get '/about/index', to: 'about#index'
   get '/genres/index', to: 'genres#index'
   get '/publishers/index', to: 'publishers#index'
   get '/platforms/index', to: 'platforms#index'
