@@ -69,3 +69,5 @@ end
 gem "tailwindcss-rails", "~> 2.6"
 
 gem "kaminari", "~> 1.2"
+
+gem "ransack", "~> 4.1"

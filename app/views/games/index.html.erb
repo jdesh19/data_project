@@ -1,10 +1,14 @@
-<h1 class="text-3xl">All Games:</h1>
-<%= paginate @games%>
+
+<%= render 'search', q: @q %>
+
+<h1 class="text-3xl">Free To Play Games:</h1>
 <% @games.each do |game| %>
 <div class="">
     <p><%=link_to game.title, game_path(game) %></p>
     <%=image_tag game.image, alt: game.title %>
+    <p><%= game.genre.name %></p>
 </div>
 <br>
 <%end%>
+<%= paginate @games%>
 
